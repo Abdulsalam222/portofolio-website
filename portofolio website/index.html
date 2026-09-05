@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abdul Salam — Web Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ══════════════════════════════
+     NAVBAR
+══════════════════════════════ -->
+<nav id="navbar">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c8f05a"/><stop offset="100%" stop-color="#5af0b8"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="42" y1="0" x2="0" y2="42" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c8f05a" stop-opacity=".15"/><stop offset="100%" stop-color="#5af0b8" stop-opacity=".05"/>
+          </linearGradient>
+        </defs>
+        <polygon points="21,2 38,11 38,31 21,40 4,31 4,11" fill="url(#lg2)" stroke="url(#lg1)" stroke-width="1.2"/>
+        <polygon points="21,7 33,14 33,28 21,35 9,28 9,14" fill="none" stroke="url(#lg1)" stroke-width=".4" opacity=".4"/>
+        <path d="M14 29 L19 13 L24 29" stroke="url(#lg1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="15.5" y1="24" x2="22.5" y2="24" stroke="url(#lg1)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M26 17.5 C26 15.5 24.5 14 22.8 14.5 C26.5 15 27.5 17 25.5 19.5 C23.5 22 22 22 24 24.5 C25.5 26.5 28 26 28 24.5" stroke="url(#lg1)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <circle cx="21" cy="21" r="1" fill="url(#lg1)" opacity=".4"/>
+      </svg>
+    </div>
+    <div class="logo-wordmark">
+      <div class="logo-name">Abdul<span class="logo-dot">.</span>Salam</div>
+      <div class="logo-tagline">Web Developer</div>
+    </div>
+  </a>
+
+  <!-- Center Nav Buttons -->
+  <ul class="nav-center">
+    <li><a href="#hero" class="nav-btn nav-btn-home active" id="nav-home"><span class="nav-icon">⌂</span><span>Home</span></a></li>
+    <li><a href="#about" class="nav-btn nav-btn-about" id="nav-about"><span class="nav-icon">◈</span><span>About</span></a></li>
+    <li><a href="#experience" class="nav-btn nav-btn-exp" id="nav-exp"><span class="nav-icon">◉</span><span>Experience</span></a></li>
+    <li><a href="#contact" class="nav-btn nav-btn-contact" id="nav-contact"><span class="nav-icon">✉</span><span>Contact</span></a></li>
+    <li><a href="#work" class="nav-btn nav-btn-view" id="nav-projects"><span class="nav-icon">▶</span><span>View Projects</span></a></li>
+  </ul>
+
+  <!-- Right Actions -->
+  <div class="nav-right">
+    <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="nav-linkedin">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="mailto:hello@abdulsalam.dev" class="nav-email">
+      <span class="email-dot"></span>✉ Email
+    </a>
+    <button class="theme-toggle" id="themeToggle">☀️</button>
+    <a href="#contact" class="nav-hire">✦ Hire Me</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button> 
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#hero" onclick="closeMob()">⌂ Home</a>
+  <a href="#about" onclick="closeMob()">◈ About</a>
+  <a href="#work" onclick="closeMob()" class="mob-viewproj">▶ View Projects</a>
+  <a href="#experience" onclick="closeMob()">◉ Experience</a>
+  <a href="#contact" onclick="closeMob()">✉ Contact</a>
+  <a href="mailto:hello@abdulsalam.dev" onclick="closeMob()">✉ Email Me</a>
+   <a href="#GIT HUB" onclick="closeMob()">◉GIT HUB</a>
+  
+  <a href="https://linkedin.com/in/abdulsalam" target="_blank" onclick="closeMob()" class="mob-linkedin">
+    <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:currentColor;display:inline;margin-right:6px;vertical-align:middle;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    LinkedIn
+  </a>
+  <a href="#contact" onclick="closeMob()" class="mob-hire">✦ Hire Me</a>
+</div>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-overlay"></div>
+  <div class="hero-left">
+    <div class="hero-tag">Available for hire — 2026</div>
+    <h1>Web<br><em>Developer</em></h1>
+    <p class="hero-desc">I craft fast, beautiful, accessible digital experiences — from concept to production with obsessive attention to craft and code quality.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">▶ View Projects</a>
+      <a href="CV.pdf" class="btn-outline" download>⬇ Download CV</a>
+    </div>
+    <div class="hero-cta-row2">
+      <a href="#contact" class="btn-primary btn-teal">✦ Hire Me</a>
+      <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="btn-linkedin">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+  <img src="image/salam.jpg.jfif" alt="Abdul Salam">
+  <!-- <div class="hero-right">
+    <div class="profile-frame">
+      <div class="photo-wrapper" id="photoWrapper">
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <div class="avatar-initials">AS</div> -->
+          <!-- <p>Click below to upload your profile photo</p> -->
+        <!-- </div>
+        <img id="profileImg" src="image/salam.jpg.jfif" alt="Abdul Salam" style="display:none;width:30%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%) contrast(1.05);transition:transform .5s,filter .3s;"/>
+      </div> -->
+      <!-- <div class="photo-badge">
+        <div><div class="badge-name">Abdul Salam</div><div class="badge-title">Senior Web Developer</div></div>
+        <div class="badge-status">Open to work</div>
+      </div> -->
+      <!-- <label for="photoInput" class="photo-upload-label">📷 Upload Photo</label> -->
+      <input type="file" id="photoInput" accept="image/*" style="display:none"/>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     ABOUT
+══════════════════════════════ -->
+<section id="about">
+  <div class="section-label">About me</div>
+  <h2>Building the web,<br>pixel by pixel.</h2>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm a <strong>full-stack web developer</strong> based in San Francisco with a passion for turning complex problems into elegant, high-performance interfaces. I've shipped products used by thousands of people across finance, healthcare, and SaaS.</p>
+      <p>My approach: start with the <strong>user's need</strong>, obsess over the details, and write code that future-me will be proud of. Great software is invisible — it just works, beautifully.</p>
+      <p>When I'm not coding, I'm contributing to open-source, mentoring junior devs, and probably thinking about typography.</p>
+      <div class="about-actions">
+        <a href="CV.pdf" class="CV" download>⬇ Download CV</a>
+        <a href="#contact" class="btn-outline">✦ Hire Me</a>
+        <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="btn-linkedin">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#work" class="btn-ghost">See projects <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item"><div class="skill-icon">⚡</div><div class="skill-name">Frontend</div><div class="skill-desc">React, Next.js, Vue, TypeScript, CSS/SASS</div></div>
+      <div class="skill-item"><div class="skill-icon">🛠</div><div class="skill-name">Backend</div><div class="skill-desc">Node.js, Express, REST APIs, GraphQL</div></div>
+      <div class="skill-item"><div class="skill-icon">🗄</div><div class="skill-name">Database</div><div class="skill-desc">PostgreSQL, MongoDB, Prisma, Redis</div></div>
+      <div class="skill-item"><div class="skill-icon">☁️</div><div class="skill-name">DevOps</div><div class="skill-desc">Docker, AWS, Vercel, CI/CD Pipelines</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     PROJECTS
+══════════════════════════════ -->
+<section id="work">
+  <div class="section-label">Selected work</div>
+  <h2>Projects I'm<br><em>proud of.</em></h2>
+  <div class="projects-list reveal">
+    <a href="#" class="project-item">
+      <div class="project-num">01</div>
+      <div class="project-info">
+        <div class="project-name">Fintrack Dashboard</div>
+        <div class="project-desc">Real-time financial analytics platform serving 12,000+ users. Reduced load times by 60% with server-side rendering and smart caching.</div>
+        <div class="project-tags"><span class="project-tag">Next.js</span><span class="project-tag">D3.js</span><span class="project-tag">PostgreSQL</span><span class="project-tag">AWS</span></div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+    <a href="#" class="project-item">
+      <div class="project-num">02</div>
+      <div class="project-info">
+        <div class="project-name">Medika Patient Portal</div>
+        <div class="project-desc">HIPAA-compliant healthcare portal with appointment booking, secure messaging, and AI triage. Shipped in 3 months for a regional hospital chain.</div>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">TypeScript</span><span class="project-tag">Node.js</span><span class="project-tag">GraphQL</span></div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+    <a href="#" class="project-item">
+      <div class="project-num">03</div>
+      <div class="project-info">
+        <div class="project-name">OpenFlow CMS</div>
+        <div class="project-desc">Open-source headless CMS with a visual editor, 2,400+ GitHub stars, used by agencies worldwide.</div>
+        <div class="project-tags"><span class="project-tag">Open Source</span><span class="project-tag">Vue.js</span><span class="project-tag">MongoDB</span><span class="project-tag">Docker</span></div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+    <a href="#" class="project-item">
+      <div class="project-num">04</div>
+      <div class="project-info">
+        <div class="project-name">Luma Design System</div>
+        <div class="project-desc">80+ component UI library with full Figma integration and WCAG 2.1 accessibility compliance for a series B startup.</div>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Storybook</span><span class="project-tag">WCAG 2.1</span><span class="project-tag">Figma</span></div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+  </div>
+  <div class="work-footer reveal">
+    <a href="#" class="btn-outline">View All Projects →</a>
+    <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="btn-linkedin">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      View on LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     EXPERIENCE
+══════════════════════════════ -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2>Where I've<br>been building.</h2>
+  <div class="exp-grid">
+
+    <!-- Job 1 -->
+    <div class="exp-item reveal">
+      <div class="exp-date-col">
+        <div class="exp-date">2022 — Present</div>
+        <span class="exp-badge current">● Current</span>
+      </div>
+      <div>
+        <div class="exp-role">Senior Frontend Engineer</div>
+        <div class="exp-company">Stripe — San Francisco, CA</div>
+        <div class="exp-desc">Leading frontend development for Stripe's merchant dashboard. Architected a component system used across 6 product teams, improving velocity by 40%.</div>
+        <div class="exp-more" id="more1">
+          <p>Mentored a team of 4 engineers, conducting weekly code reviews and establishing best practices for accessibility and performance. Drove adoption of TypeScript across the frontend codebase, reducing runtime errors by 35%. Collaborated with Design Systems team to build reusable UI primitives now used in 12 Stripe products. Led the migration from a legacy Backbone.js architecture to a modern React + TypeScript stack with zero downtime. Presented at 2 internal engineering conferences on scalable component design patterns.</p>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-skill-tag">React</span><span class="exp-skill-tag">TypeScript</span><span class="exp-skill-tag">GraphQL</span><span class="exp-skill-tag">Design Systems</span><span class="exp-skill-tag">Figma</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="read-more-btn" onclick="toggleMore('more1',this)">
+            <span>Read More</span> <span class="rm-arrow">›</span>
+          </button>
+          <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="exp-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Job 2 -->
+    <div class="exp-item reveal">
+      <div class="exp-date-col">
+        <div class="exp-date">2020 — 2022</div>
+        <span class="exp-badge">Full-time</span>
+      </div>
+      <div>
+        <div class="exp-role">Full-Stack Developer</div>
+        <div class="exp-company">Notion — Remote</div>
+        <div class="exp-desc">Built and maintained core editor features for Notion's web application. Shipped the real-time collaborative database views feature used by 2M+ users.</div>
+        <div class="exp-more" id="more2">
+          <p>Owned the development of Notion's inline database feature from conception to launch — the most requested feature in 2021 with 800K+ upvotes. Built a conflict-free replicated data type (CRDT) engine for real-time collaboration that reduced sync latency by 60%. Worked closely with the product and design teams using a rapid prototyping workflow, shipping weekly iterations. Wrote comprehensive technical documentation adopted as the team's engineering standard. Onboarded and mentored 3 new engineers during a period of rapid team growth.</p>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-skill-tag">React</span><span class="exp-skill-tag">Node.js</span><span class="exp-skill-tag">WebSockets</span><span class="exp-skill-tag">CRDTs</span><span class="exp-skill-tag">PostgreSQL</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="read-more-btn" onclick="toggleMore('more2',this)">
+            <span>Read More</span> <span class="rm-arrow">›</span>
+          </button>
+          <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="exp-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="exp-item reveal">
+      <div class="exp-date-col">
+        <div class="exp-date">2018 — 2020</div>
+        <span class="exp-badge">Freelance</span>
+      </div>
+      <div>
+        <div class="exp-role">Web Developer</div>
+        <div class="exp-company">Freelance — Worldwide</div>
+        <div class="exp-desc">12+ clients across fintech, e-commerce, and media. Delivered full-stack web applications, landing pages, and custom CMS integrations on time and on scope.</div>
+        <div class="exp-more" id="more3">
+          <p>Built a fintech dashboard for a London-based startup that processed £2M+ in monthly transactions. Delivered a headless e-commerce platform for a UK fashion brand, resulting in a 45% increase in conversion rate. Created a multi-tenant SaaS product for a media company serving 50,000+ subscribers. Maintained 100% client satisfaction across all projects with consistent on-time delivery. Developed expertise in project scoping, client communication, and agile self-management.</p>
+        </div>
+        <div class="exp-tags">
+          <span class="exp-skill-tag">JavaScript</span><span class="exp-skill-tag">PHP</span><span class="exp-skill-tag">WordPress</span><span class="exp-skill-tag">Shopify</span><span class="exp-skill-tag">MySQL</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="read-more-btn" onclick="toggleMore('more3',this)">
+            <span>Read More</span> <span class="rm-arrow">›</span>
+          </button>
+          <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="exp-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            View on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
+<section id="contact">
+  <div class="contact-bg"></div>
+  <div class="section-label">Get in touch</div>
+  <div class="contact-inner">
+
+    <!-- LEFT -->
+    <div class="contact-left reveal">
+      <div class="contact-headline">Let's build<br>something <em>great.</em></div>
+      <p class="contact-sub">Have a project in mind? Looking for a developer who truly cares about the craft? Let's talk.</p>
+
+      <a href="mailto:net2salam@gemail.c.dev" class="email-cta">
+        <span>✉</span><span>Send Me an Email</span>
+      </a>
+      <div class="contact-direct">or write to &nbsp;<a href="mailto:hello@abdulsalam.dev">hello@abdulsalam.dev</a></div>
+
+      <div class="contact-socials">
+        <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="social-btn linkedin-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#" class="social-btn">⌥ GitHub</a>
+        <a href="#" class="social-btn">𝕏 Twitter</a>
+        <a href="CV.pdf" class="social-btn" download>⬇ Download CV</a>
+      </div>
+
+      <!-- Hire Me card -->
+      <div class="hire-me-card">
+        <div class="hire-card-title">✦ Available for hire</div>
+        <div class="hire-card-text">I'm open to full-time roles, freelance contracts, and consulting engagements. Let's discuss how I can help your team ship great products.</div>
+        <div class="hire-card-btns">
+          <a href="mailto:hello@abdulsalam.dev" class="hire-btn hire-btn-primary">✦ Hire Me Now</a>
+          <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="hire-btn hire-btn-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — Form -->
+    <div class="contact-form reveal">
+      <div class="form-title">Send a Message</div>
+      <div class="form-subtitle">I reply within 24 hours · Mon – Fri</div>
+      <div class="form-row">
+        <div><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Abdul" id="fname"/></div>
+        <div><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Salam" id="lname"/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="net2salam@gemail.com" id="femail"/></div>
+      <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Project inquiry / Freelance / Other" id="fsubject"/></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell me about your project, timeline, and budget…" id="fmessage"></textarea></div>
+      <button class="form-submit" id="formSubmit" onclick="submitForm()"><span>✦ Send Message</span></button>
+      <div class="form-success" id="formSuccess">✓ Message sent! I'll get back to you within 24 hours.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-copy">© 2026 Abdul Salam. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="https://linkedin.com/in/abdulsalam" target="_blank" class="li">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-right">
+    <a href="mailto:net2salam@gemail.com.dev" class="footer-back">✉ net2salam@gemail..dev</a>
+    <a href="#hero" class="footer-back">↑ Top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
